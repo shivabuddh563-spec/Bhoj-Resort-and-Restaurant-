@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="hi" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bhoj Resort and Restaurant | Bisauli - Royal Weddings, Stay & Dining</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- AOS Scroll Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #0c0806;
+            color: #f8f5f0;
+            overflow-x: hidden;
+        }
+        .font-royal {
+            font-family: 'Cinzel', serif;
+        }
+        /* Gold Shimmer Text Animation */
+        .gold-shimmer {
+            background: linear-gradient(90deg, #d4af37 0%, #fff3b0 25%, #d4af37 50%, #aa7c11 75%, #d4af37 100%);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: shimmer 4s linear infinite;
+        }
+        @keyframes shimmer {
+            to { background-position: 200% center; }
+        }
+        .gold-bg {
+            background: linear-gradient(135deg, #f3cd58 0%, #c59b27 100%);
+            transition: all 0.3s ease;
+        }
+        .gold-bg:hover {
+            box-shadow: 0 0 25px rgba(212, 175, 55, 0.5);
+            transform: translateY(-2px);
+        }
+        /* Ken Burns Slow Zoom Animation for Hero */
+        .ken-burns {
+            animation: kenBurns 18s ease-in-out infinite alternate;
+        }
+        @keyframes kenBurns {
+            0% { transform: scale(1) translate(0, 0); }
+            100% { transform: scale(1.14) translate(-1%, -1%); }
+        }
+        /* Royal Glass Cards with Hover Lift & Glow */
+        .royal-card {
+            background: rgba(26, 18, 13, 0.85);
+            border: 1px solid rgba(212, 175, 55, 0.22);
+            backdrop-filter: blur(12px);
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), border-color 0.4s ease, box-shadow 0.4s ease;
+        }
+        .royal-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(243, 205, 88, 0.75);
+            box-shadow: 0 20px 40px -15px rgba(212, 175, 55, 0.25);
+        }
+        /* Floating Golden Particles */
+        .particle {
+            position: absolute;
+            border-radius: 50%;
+            background: radial-gradient(circle, #ffe885 0%, transparent 70%);
+            pointer-events: none;
+            animation: floatUp linear infinite;
+        }
+        @keyframes floatUp {
+            0% { transform: translateY(100vh) scale(0.5); opacity: 0; }
+            20% { opacity: 0.8; }
+            80% { opacity: 0.6; }
+            100% { transform: translateY(-10vh) scale(1.2); opacity: 0; }
+        }
+        /* Preloader */
+        #preloader {
+            position: fixed;
+            inset: 0;
+            background: #0c0806;
+            z-index: 9999;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 0.6s ease, visibility 0.6s ease;
+        }
+        .loader-ring {
+            width: 56px;
+            height: 56px;
+            border: 3px solid rgba(212, 175, 55, 0.2);
+            border-top-color: #f3cd58;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin { to { transform: rotate(360deg); } }
+    </style>
+</head>
+<body class="antialiased selection:bg-amber-500 selection:text-black">
+
+    <!-- Royal Preloader -->
+    <div id="preloader">
+        <div class="loader-ring mb-4"></div>
+        <h2 class="font-royal text-xl tracking-[0.25em] gold-shimmer font-bold">BHOJ RESORT</h2>
+        <p class="text-xs text-amber-200/60 tracking-widest mt-1">BISAULI • UP</p>
+    </div>
+
+    <!-- Navbar -->
+    <nav id="navbar" class="fixed top-0 w-full z-50 transition-all duration-300 bg-[#0c0806]/80 backdrop-blur-md border-b border-amber-500/20">
+        <div class="max-w-6xl mx-auto px-4 py-3.5 flex justify-between items-center">
+            <a href="#" class="flex items-center gap-2.5">
+                <div class="w-9 h-9 rounded-full border border-amber-400/60 flex items-center justify-center bg-amber-500/10 text-amber-400 font-royal font-bold text-lg">
+                    B
+                </div>
+                <div>
+                    <h1 class="font-royal text-lg md:text-xl font-bold gold-shimmer tracking-wider leading-none">BHOJ RESORT</h1>
+                    <p class="text-[9px] tracking-[0.22em] text-amber-200/70 uppercase mt-0.5">& Restaurant • Bisauli</p>
+                </div>
+            </a>
+            <div class="hidden md:flex space-x-7 text-sm font-medium text-stone-300">
+                <a href="#services" class="hover:text-amber-400 transition">Experiences</a>
+                <a href="#gallery" class="hover:text-amber-400 transition">Royal Gallery</a>
+                <a href="#rooms" class="hover:text-amber-400 transition">Luxury Stay</a>
+                <a href="#booking" class="hover:text-amber-400 transition">Book Event</a>
+            </div>
+            <a href="tel:9762845455" class="gold-bg text-stone-950 font-bold text-xs md:text-sm px-4 py-2 rounded-full shadow-lg flex items-center gap-2">
+                <i class="fa-solid fa-phone-volume animate-pulse"></i> 97628 45455
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section with Ken Burns & Golden Particles -->
+    <section class="relative min-h-screen flex items-center justify-center pt-20 px-4 overflow-hidden">
+        <!-- Animated Background Image -->
+        <div class="absolute inset-0 z-0 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=1600&q=80" alt="Bhoj Resort Royal Venue" class="w-full h-full object-cover opacity-40 ken-burns">
+            <div class="absolute inset-0 bg-gradient-to-b from-[#0c0806]/80 via-[#0c0806]/55 to-[#0c0806]"></div>
+        </div>
+
+        <!-- Floating Particles Container -->
+        <div id="particles-container" class="absolute inset-0 z-0 overflow-hidden pointer-events-none"></div>
+
+        <div class="relative z-10 max-w-4xl mx-auto text-center space-y-6">
+            <div data-aos="fade-down" data-aos-duration="900" class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-amber-400/40 bg-amber-500/10 text-amber-300 text-xs font-semibold tracking-[0.2em] uppercase">
+                <span class="w-2 h-2 rounded-full bg-amber-400 animate-ping"></span>
+                Food • Stay • Celebrations
+            </div>
+
+            <h1 data-aos="zoom-in" data-aos-duration="1100" class="font-royal text-4xl sm:text-5xl md:text-7xl font-extrabold leading-tight tracking-tight">
+                Bhoj Resort <br class="sm:hidden"><span class="gold-shimmer">& Restaurant</span>
+            </h1>
+
+            <p data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000" class="text-stone-300 text-base md:text-xl max-w-2xl mx-auto leading-relaxed">
+                बिसौली का सबसे भव्य और शाही डेस्टिनेशन — यादगार शादियों, लग्जरी स्टे और स्वादिष्ट फैमिली डाइनिंग के लिए।
+            </p>
+
+            <!-- Location Pill -->
+            <div data-aos="fade-up" data-aos-delay="350" class="flex items-center justify-center gap-2 text-amber-200/90 text-xs md:text-sm bg-stone-900/60 border border-amber-500/20 w-fit mx-auto px-4 py-2 rounded-full">
+                <i class="fa-solid fa-location-dot text-amber-400"></i>
+                <span>SH-43, Mudia Dhureki (Chandausi Road), Bisauli, UP</span>
+            </div>
+
+            <!-- CTA Buttons -->
+            <div data-aos="fade-up" data-aos-delay="500" class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-3">
+                <a href="#booking" class="w-full sm:w-auto gold-bg text-stone-950 font-bold px-8 py-4 rounded-xl shadow-xl flex items-center justify-center gap-2 text-sm md:text-base">
+                    <i class="fa-regular fa-calendar-check text-lg"></i> Book Wedding / Room
+                </a>
+                <a href="https://wa.me/919762845455?text=Hello%20Bhoj%20Resort%2C%20mujhe%20booking%20ki%20jankari%20chahiye." target="_blank" class="w-full sm:w-auto royal-card text-white font-semibold px-8 py-4 rounded-xl flex items-center justify-center gap-2 text-sm md:text-base">
+                    <i class="fa-brands fa-whatsapp text-green-400 text-xl"></i> Direct WhatsApp
+                </a>
+            </div>
+        </div>
+
+        <!-- Scroll Down Indicator -->
+        <a href="#stats" class="absolute bottom-6 left-1/2 -translate-x-1/2 text-amber-400/70 hover:text-amber-300 transition flex flex-col items-center gap-1 text-[10px] tracking-widest uppercase">
+            <span>Explore</span>
+            <i class="fa-solid fa-chevron-down animate-bounce"></i>
+        </a>
+    </section>
+
+    <!-- Animated Counter Stats -->
+    <section id="stats" class="py-12 px-4 border-y border-amber-500/20 bg-gradient-to-r from-[#0c0806] via-[#19110c] to-[#0c0806]">
+        <div class="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            <div data-aos="fade-up" data-aos-delay="0">
+                <div class="font-royal text-3xl md:text-4xl font-extrabold gold-shimmer counter" data-target="500">0</div>
+                <p class="text-xs md:text-sm text-stone-400 mt-1">Grand Events Hosted</p>
+            </div>
+            <div data-aos="fade-up" data-aos-delay="100">
+                <div class="font-royal text-3xl md:text-4xl font-extrabold gold-shimmer counter" data-target="1000">0</div>
+                <p class="text-xs md:text-sm text-stone-400 mt-1">Guest Capacity Lawn</p>
+            </div>
+            <div data-aos="fade-up" data-aos-delay="200">
+                <div class="font-royal text-3xl md:text-4xl font-extrabold gold-shimmer counter" data-target="24">0</div>
+                <p class="text-xs md:text-sm text-stone-400 mt-1">Hours Room Service</p>
+            </div>
+            <div data-aos="fade-up" data-aos-delay="300">
+                <div class="font-royal text-3xl md:text-4xl font-extrabold gold-shimmer counter" data-target="100">0</div>
+                <p class="text-xs md:text-sm text-stone-400 mt-1">% Royal Hospitality</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3 Royal Pillars -->
+    <section id="services" class="py-20 px-4 max-w-6xl mx-auto">
+        <div class="text-center mb-14" data-aos="fade-up">
+            <span class="text-amber-400 text-xs font-bold tracking-[0.25em] uppercase">Signature Experiences</span>
+            <h2 class="font-royal text-3xl md:text-5xl font-bold gold-shimmer mt-2">Food • Stay • Celebrations</h2>
+            <p class="text-stone-400 mt-3 text-sm md:text-base max-w-xl mx-auto">शाही अंदाज़, शानदार सजावट और बेहतरीन मेहमाननवाज़ी का अनोखा संगम</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+            <!-- Card 1: Weddings -->
+            <div data-aos="fade-up" data-aos-delay="100" class="royal-card rounded-2xl overflow-hidden group">
+                <div class="h-60 overflow-hidden relative">
+                    <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=800&q=80" alt="Wedding Venue" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#1a120d] via-transparent to-transparent"></div>
+                    <span class="absolute top-3 right-3 bg-amber-500 text-black text-[11px] font-bold px-3 py-1 rounded-full shadow">Wedding Season Open</span>
+                </div>
+                <div class="p-6 space-y-3">
+                    <div class="w-11 h-11 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 text-xl">
+                        <i class="fa-solid fa-crown"></i>
+                    </div>
+                    <h3 class="font-royal text-xl font-bold text-white">Royal Weddings & Banquet</h3>
+                    <p class="text-stone-400 text-sm leading-relaxed">
+                        भव्य वेडिंग लॉन, कस्टम थीम डेकोरेशन, विशाल स्टेज और शाही कैटरिंग। शादी, सगाई और रिसेप्शन के लिए बिसौली की पहली पसंद।
+                    </p>
+                </div>
+            </div>
+
+            <!-- Card 2: Spacious Rooms -->
+            <div id="rooms" data-aos="fade-up" data-aos-delay="250" class="royal-card rounded-2xl overflow-hidden group">
+                <div class="h-60 overflow-hidden relative">
+                    <img src="https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=800&q=80" alt="Luxury Rooms" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#1a120d] via-transparent to-transparent"></div>
+                    <span class="absolute top-3 right-3 bg-emerald-500 text-black text-[11px] font-bold px-3 py-1 rounded-full shadow">Rooms Available</span>
+                </div>
+                <div class="p-6 space-y-3">
+                    <div class="w-11 h-11 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 text-xl">
+                        <i class="fa-solid fa-bed"></i>
+                    </div>
+                    <h3 class="font-royal text-xl font-bold text-white">Spacious Luxury Rooms</h3>
+                    <p class="text-stone-400 text-sm leading-relaxed">
+                        आधुनिक सुविधाओं से लैस AC रूम्स, लग्जरी इंटीरियर, अटैच बाथरूम और सुरक्षित पार्किंग। बारात व फैमिली स्टे के लिए सर्वोत्तम।
+                    </p>
+                </div>
+            </div>
+
+            <!-- Card 3: Fine Dining -->
+            <div data-aos="fade-up" data-aos-delay="400" class="royal-card rounded-2xl overflow-hidden group">
+                <div class="h-60 overflow-hidden relative">
+                    <img src="https://images.unsplash.com/photo-1585937421612-70a008356fbe?auto=format&fit=crop&w=800&q=80" alt="Fine Dining" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#1a120d] via-transparent to-transparent"></div>
+                    <span class="absolute top-3 right-3 bg-amber-500 text-black text-[11px] font-bold px-3 py-1 rounded-full shadow">Family Dining</span>
+                </div>
+                <div class="p-6 space-y-3">
+                    <div class="w-11 h-11 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 text-xl">
+                        <i class="fa-solid fa-utensils"></i>
+                    </div>
+                    <h3 class="font-royal text-xl font-bold text-white">Multi-Cuisine Restaurant</h3>
+                    <p class="text-stone-400 text-sm leading-relaxed">
+                        ताज़ा, शुद्ध और लज़ीज़ व्यंजन। अपने परिवार और दोस्तों के साथ लंच, डिनर और पार्टी का आनंद लें शांत और प्रीमियम माहौल में।
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Visual Showcase Gallery -->
+    <section id="gallery" class="py-16 px-4 bg-[#120c09] border-y border-amber-500/15">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <span class="text-amber-400 text-xs font-bold tracking-[0.25em] uppercase">Glimpse of Royalty</span>
+                <h2 class="font-royal text-3xl md:text-4xl font-bold gold-shimmer mt-2">Celebrations & Ambience</h2>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div data-aos="zoom-in" data-aos-delay="0" class="rounded-2xl overflow-hidden h-48 md:h-64 border border-amber-500/20 group">
+                    <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=600&q=80" alt="Floral Decor" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                </div>
+                <div data-aos="zoom-in" data-aos-delay="100" class="rounded-2xl overflow-hidden h-48 md:h-64 border border-amber-500/20 group">
+                    <img src="https://images.unsplash.com/photo-1566665797739-1674de7a421a?auto=format&fit=crop&w=600&q=80" alt="Hotel Room" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                </div>
+                <div data-aos="zoom-in" data-aos-delay="200" class="rounded-2xl overflow-hidden h-48 md:h-64 border border-amber-500/20 group">
+                    <img src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&w=600&q=80" alt="Wedding Lights" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                </div>
+                <div data-aos="zoom-in" data-aos-delay="300" class="rounded-2xl overflow-hidden h-48 md:h-64 border border-amber-500/20 group">
+                    <img src="https://images.unsplash.com/photo-1555244162-803834f70033?auto=format&fit=crop&w=600&q=80" alt="Catering Buffet" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Instant WhatsApp Booking Section -->
+    <section id="booking" class="py-20 px-4 max-w-3xl mx-auto">
+        <div data-aos="fade-up" class="royal-card rounded-3xl p-6 md:p-10 shadow-2xl relative overflow-hidden">
+            <div class="text-center mb-8">
+                <span class="text-amber-400 text-xs font-bold tracking-[0.2em] uppercase">Fast Reservation</span>
+                <h2 class="font-royal text-2xl md:text-4xl font-bold gold-shimmer mt-1">Book Your Date Now</h2>
+                <p class="text-stone-400 text-sm mt-2">डिटेल्स भरें — आपका मैसेज सीधे रिसॉर्ट के WhatsApp पर खुलेगा</p>
+            </div>
+
+            <form id="bookingForm" class="space-y-4">
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs text-amber-200/80 mb-1.5">आपका नाम (Full Name) *</label>
+                        <input type="text" id="custName" required placeholder="उदा. अमन वर्मा" class="w-full bg-stone-950/90 border border-amber-500/30 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-amber-400 transition">
+                    </div>
+                    <div>
+                        <label class="block text-xs text-amber-200/80 mb-1.5">मोबाइल नंबर (Mobile Number) *</label>
+                        <input type="tel" id="custPhone" required placeholder="10 अंकों का नंबर" class="w-full bg-stone-950/90 border border-amber-500/30 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-amber-400 transition">
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs text-amber-200/80 mb-1.5">सर्विस चुनें (Booking Purpose) *</label>
+                        <select id="serviceType" class="w-full bg-stone-950/90 border border-amber-500/30 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-amber-400 transition">
+                            <option value="Wedding / Banquet Booking">Wedding / Banquet Booking (शादी / सगाई)</option>
+                            <option value="Spacious Luxury Room Stay">Luxury Room Booking (रूम बुकिंग)</option>
+                            <option value="Family Restaurant / Party">Restaurant Table / Birthday Party</option>
+                            <option value="Full Resort Booking">Full Resort & Lawn Package</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-xs text-amber-200/80 mb-1.5">तारीख (Event / Check-in Date) *</label>
+                        <input type="date" id="eventDate" required class="w-full bg-stone-950/90 border border-amber-500/30 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-amber-400 transition">
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-xs text-amber-200/80 mb-1.5">अतिरिक्त जानकारी (Guests / Rooms Count)</label>
+                    <textarea id="notes" rows="2" placeholder="जैसे: 3 AC रूम चाहिए या 400 मेहमानों की शादी की बुकिंग..." class="w-full bg-stone-950/90 border border-amber-500/30 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-amber-400 transition"></textarea>
+                </div>
+
+                <button type="submit" class="w-full gold-bg text-stone-950 font-bold py-4 rounded-xl shadow-lg flex items-center justify-center gap-2 text-base cursor-pointer">
+                    <i class="fa-brands fa-whatsapp text-xl"></i> Check Availability on WhatsApp
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#070504] border-t border-amber-500/20 pt-14 pb-8 px-4">
+        <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-8 mb-10">
+            <div>
+                <h3 class="font-royal text-xl font-bold gold-shimmer">Bhoj Resort & Restaurant</h3>
+                <p class="text-stone-400 text-sm mt-2 leading-relaxed">
+                    Food • Stay • Celebrations<br>
+                    बिसौली क्षेत्र में शाही मेहमाननवाज़ी, लग्जरी स्टे और भव्य आयोजनों का सर्वश्रेष्ठ स्थल।
+                </p>
+            </div>
+            <div>
+                <h4 class="font-bold text-amber-300 text-xs uppercase tracking-[0.2em] mb-3">Location</h4>
+                <p class="text-stone-300 text-sm flex items-start gap-2">
+                    <i class="fa-solid fa-location-dot text-amber-400 mt-1"></i>
+                    <span>SH-43, Mudia Dhureki, Chandausi Road, Bisauli, Uttar Pradesh</span>
+                </p>
+                <a href="https://maps.google.com/?q=Bhoj+Resort+and+Restaurant+Mudia+Dhureki+Bisauli" target="_blank" class="inline-flex items-center gap-1 mt-3 text-xs text-amber-400 hover:underline">
+                    <span>Get Google Maps Directions</span>
+                    <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                </a>
+            </div>
+            <div>
+                <h4 class="font-bold text-amber-300 text-xs uppercase tracking-[0.2em] mb-3">24/7 Booking Desk</h4>
+                <div class="space-y-2 text-sm">
+                    <a href="tel:9762845455" class="block text-stone-200 hover:text-amber-400 transition">
+                        <i class="fa-solid fa-phone text-amber-400 mr-2"></i> +91 97628 45455
+                    </a>
+                    <a href="tel:9762245455" class="block text-stone-200 hover:text-amber-400 transition">
+                        <i class="fa-solid fa-phone text-amber-400 mr-2"></i> +91 97622 45455
+                    </a>
+                    <a href="https://instagram.com/bhoj_resort_bisauli" target="_blank" class="block text-stone-200 hover:text-amber-400 transition">
+                        <i class="fa-brands fa-instagram text-amber-400 mr-2"></i> @bhoj_resort_bisauli
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="border-t border-stone-800/80 pt-6 text-center text-xs text-stone-500">
+            <p>© 2026 Bhoj Resort and Restaurant, Bisauli. All Rights Reserved.</p>
+            <p class="mt-1 text-stone-600">Crafted with Royal Precision by <span class="text-amber-500/80 font-semibold">SHIVA Digital Services</span></p>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/919762845455?text=Hello%20Bhoj%20Resort%2C%20I%20want%20to%20inquire%20about%20booking." target="_blank" class="fixed bottom-5 right-5 z-50 bg-green-500 text-white w-14 h-14 rounded-full shadow-2xl flex items-center justify-center text-2xl hover:scale-110 transition">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- AOS Script & Custom Animations -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Preloader Fade Out
+        window.addEventListener('load', () => {
+            const preloader = document.getElementById('preloader');
+            setTimeout(() => {
+                preloader.style.opacity = '0';
+                preloader.style.visibility = 'hidden';
+            }, 600);
+            AOS.init({ once: true, offset: 60 });
+        });
+
+        // Floating Golden Particles Generator
+        const container = document.getElementById('particles-container');
+        for (let i = 0; i < 22; i++) {
+            const p = document.createElement('div');
+            p.classList.add('particle');
+            const size = Math.random() * 5 + 3 + 'px';
+            p.style.width = size;
+            p.style.height = size;
+            p.style.left = Math.random() * 100 + '%';
+            p.style.animationDuration = (Math.random() * 10 + 8) + 's';
+            p.style.animationDelay = (Math.random() * 6) + 's';
+            container.appendChild(p);
+        }
+
+        // Animated Number Counters
+        const counters = document.querySelectorAll('.counter');
+        let counted = false;
+        window.addEventListener('scroll', () => {
+            const statsSection = document.getElementById('stats');
+            if (!counted && statsSection.getBoundingClientRect().top < window.innerHeight - 50) {
+                counters.forEach(counter => {
+                    const target = +counter.getAttribute('data-target');
+                    const increment = target / 50;
+                    let current = 0;
+                    const updateCounter = () => {
+                        current += increment;
+                        if (current < target) {
+                            counter.innerText = Math.ceil(current) + '+';
+                            requestAnimationFrame(updateCounter);
+                        } else {
+                            counter.innerText = target + '+';
+                        }
+                    };
+                    updateCounter();
+                });
+                counted = true;
+            }
+        });
+
+        // WhatsApp Booking Form Handler
+        document.getElementById('bookingForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('custName').value;
+            const phone = document.getElementById('custPhone').value;
+            const service = document.getElementById('serviceType').value;
+            const date = document.getElementById('eventDate').value;
+            const notes = document.getElementById('notes').value;
+
+            const message = `*Royal Booking Inquiry - Bhoj Resort*%0A%0A` +
+                            `*Name:* ${name}%0A` +
+                            `*Phone:* ${phone}%0A` +
+                            `*Service:* ${service}%0A` +
+                            `*Date:* ${date}%0A` +
+                            `*Details:* ${notes || 'N/A'}`;
+
+            window.open(`https://wa.me/919762845455?text=${message}`, '_blank');
+        });
+    </script>
+</body>
+</html>
